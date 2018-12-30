@@ -8,7 +8,7 @@ This is just a toy. There are still bugs and I'm not sure I'll keep updating thi
 
 To be filled.
 
-Right click on a cell to set its state.
+Right click on a cell to set its state. Zoom with mouse wheel. Pan with mouse left button.
 
 Load the examples inside the corresponding folder.
 
