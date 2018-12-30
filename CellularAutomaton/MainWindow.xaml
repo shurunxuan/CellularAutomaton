@@ -1,0 +1,58 @@
+﻿<Window x:Class="CellularAutomaton.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CellularAutomaton"
+        mc:Ignorable="d"
+        Title="Cellular Automaton" Height="450" Width="800" Background="Black">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Grid  Margin="0,0,0,0" Grid.Row="1" Background="Black" ZIndex="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Margin="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="PlayButton" Content="&#xE768;" Style="{StaticResource BlackButton}" FontFamily="Segoe MDL2 Assets" Grid.Column="0" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="30" Height="30" Click="PlayButton_Click" ToolTip="Play" />
+                <Button x:Name="NextFrameButton" Content="&#xE893;" Style="{StaticResource BlackButton}" FontFamily="Segoe MDL2 Assets" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="30" Height="30" Click="NextFrameButton_Click" ToolTip="Next Frame" />
+                <Button x:Name="PauseButton" Content="&#xE769;" Style="{StaticResource BlackButton}" FontFamily="Segoe MDL2 Assets" Grid.Column="2" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="30" Height="30" Click="PauseButton_Click" ToolTip="Pause" />
+                <Button x:Name="ResetButton" Content="&#xE72C;" Style="{StaticResource BlackButton}" FontFamily="Segoe MDL2 Assets" Grid.Column="3" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="30" Height="30"
+                        PreviewMouseLeftButtonDown="ResetButton_Click" ToolTip="Reset Map"/>
+                <Button x:Name="FitToScreenButton" Content="&#xE9A6;" Style="{StaticResource BlackButton}" FontFamily="Segoe MDL2 Assets" Grid.Column="4" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="30" Height="30"
+                        Click="FitToScreenButton_Click" ToolTip="Fit to Screen"/>
+                <Button x:Name="SaveButton" Content="&#xE74E;" Style="{StaticResource BlackButton}" FontFamily="Segoe MDL2 Assets" Grid.Column="5" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="30" Height="30" Click="SaveButton_Click" ToolTip="Save Game"/>
+                <Button x:Name="LoadButton" Content="&#xE8DA;" Style="{StaticResource BlackButton}" FontFamily="Segoe MDL2 Assets" Grid.Column="6" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="30" Height="30" Click="LoadButton_Click" ToolTip="Load Game"/>
+                <Button x:Name="EditRuleButton" Content="&#xE70F;" Style="{StaticResource BlackButton}" FontFamily="Segoe MDL2 Assets" Grid.Column="7" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="30" Height="30"
+                        Click="EditRuleButton_Click" ToolTip="Edit Rules"/>
+                <Button x:Name="SettingButton" Content="&#xE713;" Style="{StaticResource BlackButton}" FontFamily="Segoe MDL2 Assets" Grid.Column="8" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="30" Height="30"
+                        Click="SettingButton_Click" ToolTip="Settings"/>
+            </Grid>
+        </Grid>
+        <Canvas x:Name="MainCanvas" Grid.Row="0" Margin="0,0,0,0" Background="Black" Loaded="MainCanvas_OnLoaded" SizeChanged="MainCanvas_OnSizeChanged" MouseWheel="MainCanvas_OnMouseWheel" MouseMove="MainCanvas_OnMouseMove" MouseLeftButtonDown="MainCanvas_OnMouseLeftButtonDown" MouseLeftButtonUp="MainCanvas_OnMouseLeftButtonUp" ZIndex="0">
+
+        </Canvas>
+
+        <!--<Canvas x:Name="DummyCanvas" Grid.Row="0" Margin="0,0,0,0" Background="Transparent" MouseWheel="MainCanvas_OnMouseWheel" MouseMove="MainCanvas_OnMouseMove">
+
+        </Canvas>-->
+
+    </Grid>
+</Window>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="CellularAutomaton.SettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CellularAutomaton"
+        mc:Ignorable="d"
+        Title="Settings" SizeToContent="WidthAndHeight" Background="Black" Closing="SettingWindow_OnClosing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Content="Map Width:" Foreground="White" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="0,0,0.5,0.5"></Label>
+        <Label Grid.Row="1" Grid.Column="0" Content="Map Height:" Foreground="White" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="0,0,0.5,0.5"></Label>
+        <Label Grid.Row="2" Grid.Column="0" Content="Play Interval (ms):" Foreground="White" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="0,0,0.5,0.5"></Label>
+        <TextBox x:Name="WidthTextBox" Grid.Row="0" Grid.Column="1" Width="150" Margin="5" MaxLength="3" PreviewTextInput="TextBoxIntInputValidation"></TextBox>
+        <TextBox x:Name="HeightTextBox" Grid.Row="1" Grid.Column="1" Width="150" Margin="5" MaxLength="3" PreviewTextInput="TextBoxIntInputValidation"></TextBox>
+        <TextBox x:Name="IntervalTextBox" Grid.Row="2" Grid.Column="1" Width="150" Margin="5" MaxLength="10" PreviewTextInput="TextBoxIntInputValidation"></TextBox>
+        <Button x:Name="ConfirmButton" Content="Confirm" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="0"
+                Style="{StaticResource BlackButton}" Margin="5" Click="ConfirmButton_Click"></Button>
+        <Button x:Name="CancelButton" Content="Cancel" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0"
+                Style="{StaticResource BlackButton}" Margin="5" Click="CancelButton_Click"></Button>
+    </Grid>
+</Window>
